@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Login Page </title>
+<style> 
+body {
+  background-color:#191133;
+  font-family: "Helvetica", sans-serif;
+ 
+}
+.content {
+  width: 96%;
+  margin: 2%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+         
+label{
+font-weight:bold;
+color: #fec76f;
+padding-right: 7px;
+}
+
+button { 
+        background-color:#fec76f; 
+        width:17%;
+        color:#191133; 
+        font-weight:bold;
+        padding:15px; 
+        margin:auto; 
+        border:none; 
+        cursor:pointer;
+        border-radius: 5px;
+        min-width: 5rem;
+         } 
+ form { 
+        border: 2px solid #fec76f;
+        padding: 10vh;
+        margin-left: 20vw;
+        margin-right: 20vw;
+        border-radius: 15px;
+        background-color: #191133;
+    } 
+ input[type=text], input[type=password] { 
+        width: auto; 
+        margin: 8px 0px;
+        padding: 12px 20px; 
+        display: inline; 
+        border: 2px solid #fec76f; 
+        box-sizing: border-box; 
+        border-radius: 10px;
+    }
+    
+ button:hover {        
+     opacity:0.7;
+    } 
+
+h1 { 
+       color: rgb(0, 0, 0);
+       
+    }
+
+
+</style> 
+</head>  
+
+<body>
+<div class="content">
+<center style="border-bottom: 1px solid #fec76f; padding: 5vh"><h1>LOGIN FORM</h1></center>
+<div style="padding-top: 10vh">
+    <form name="myform"> 
+      <center>
+        <div> 
+          <div style="padding:5px">
+            <label>Username  </label> 
+            <input type="text" placeholder="Enter Username" name="username" required >
+          </div>
+          <div style="padding:5px">
+            <label>Password  </label> 
+            <input type="password" placeholder="Enter Password" name="password" required >
+          </div>
+          <div style="padding:5px">
+            <button onclick="validateform()" type="button"> Login</button>   
+          </div>
+          <div id="msg" style="padding:5px; height: 3vh; color: white;"></div>
+        </div> </center>
+    </form> 
+  </div>  
+</div>
+</body>  
+
+
+<script>  
+function validateform(){  
+var uname=document.myform.username.value;  
+var upassword=document.myform.password.value; 
+ 
+
+if (uname=="hello" && upassword=="hello"){  
+    //  alert("Validation successful");
+    document.getElementById("msg").innerHTML = "Login Successful!"; 
+window.location = "loginPage.html";   
+}
+else if(uname=="" && upassword==""){
+   document.getElementById("msg").innerHTML = "Enter Username and Password";    
+}
+else if(uname==""){
+   document.getElementById("msg").innerHTML = "Enter Username";    
+}
+else if(upassword==""){
+   document.getElementById("msg").innerHTML = "Enter Password";    
+}
+else{  
+    document.getElementById("msg").innerHTML = "Incorrect Username or Password";    
+    // alert("Validation unsuccessful. Please enter correct details");  
+  }  
+}  
+</script> 
+
+</html>
+
+ 
